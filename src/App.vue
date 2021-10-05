@@ -1,32 +1,88 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Navegador
+		:nav-links="navLinks"
+		background="#fff"
+		link-color="#777"
+		hoverBackground="#ddd"
+    />
+    <Vertical
+   
+    background="#fff"
+		link-color="#777"
+		hoverBackground="#ddd"
+     />
+    <router-view/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
   </div>
 </template>
 
-<style>
+<script>
+
+import Navegador from './components/Navegador.vue'
+import Vertical from './components/Vertical.vue'
+
+export default {
+  components: {
+    Navegador,
+    Vertical
+  },
+  data: () => ({
+
+    
+    navLinks: [
+      {
+        text: 'Zonas',
+		path: '/contact',
+    
+      },
+      {
+        text: 'Sobre',
+		path: '/about',
+
+      },
+      {
+        text: 'Salir',
+		path: '/blog',
+
+      },
+      {
+        text: 'Portfolio',
+		path: '/portfolio',
+
+      },
+      {
+        text: 'Portfolio',
+		path: '/portfolio',
+
+      }
+    ]
+  })
+
+
+
+}
+</script>
+
+<style >
+
+
+figure {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 10px;
+	margin-inline-end: 0;
+}
+
+body {
+  margin: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
