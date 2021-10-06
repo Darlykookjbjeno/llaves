@@ -1,27 +1,21 @@
 <template>
-	<nav  class="d-flex flex-row-reverse bd-highlight"
-	
-	:style="{ background: background || '#333' }">
-		<ul :style="{ background: background || '#333' }" ref="nav">
+	<header  class="d-flex flex-row-reverse bd-highlight">
+		<ul ref="nav">
 			
-			<li
-				v-for="(link, index) in navLinks"
-				:key="index"
-				@mouseenter="$event.currentTarget.style.background = hoverBackground || '#999'"
-				@mouseleave="$event.currentTarget.style.background = background || '#333'"
-			>
-				<router-link
-					:to="link.path"
-					:style="{ color: linkColor || '#DDD' }"
-				>
+			<!-- <li v-for="(link, index) in navLinks" :key="index">
+				<router-link :to="link.path">
 					{{ link.text }}
 					<i :class="link.icon" />
 				</router-link>
-			</li>
+			</li> -->
 
-			<i ><img src="@/assets/usuario.png" style="width:20px    ;"></i>
+			<li><a>inicio</a></li>
+
+			<i ><img src="@/assets/usuario.png" style="width:20px ;"></i>
 		</ul>
-	</nav>
+		<br/>
+	</header>
+	
 </template>
 
 
@@ -29,23 +23,17 @@
 export default {
 	name:"Navegador",
 	
-	props: ['navLinks', 'background', 'linkColor', 'hoverBackground', 'imagePath'],
-	methods: {
-		toggleNav () {
-			const nav = this.$refs.nav.classList
-			nav.contains('active') ? nav.remove('active') : nav.add('active')
-		}
-	}
+	
+	
 }
 </script>
 
 
-<style scoped lang="css">
+<style scoped >
 
 
-nav {
+header {
     position: relative;
-   
 	height: 60px;
 	width: 100%;
 	box-shadow: 2px 2px 2px #CCC;
@@ -83,12 +71,6 @@ ul {
 			padding: 10px 20px;
 		}
 	
-    
-li:hover{
-  border-radius:3px ;
-  position: relative;
-  left: -20px;
-}
 
 
 </style>

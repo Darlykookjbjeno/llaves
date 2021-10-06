@@ -1,103 +1,39 @@
 <template>
-  <div>
-    <div class="vertical-nav bg-white d-flex flex-column" id="menu">
-      <div class="cabeza py-4 px-3 mb-4 bg-light">
-        <div class="media d-flex align-items-center">
-          <img src="../assets/logoUno.png" style="width: 50px" />
-
-          <div class="media-body">
-            <h5 class="m-0">SENA</h5>
-            <p class="font-weight-light text-muted mb-0">Zonas</p>
-          </div>
+  
+    <nav class="vertical  d-flex flex-column" id="vertical">
+      <div class="py-4 px-3">
+        <div class="media">
+          <img src="../assets/logoUno.png" style="width: 40px" />
         </div>
       </div>
+        <br>
 
-      <aside :style="{ background: background || '#333' }">
-        <ul
-          class="accordion"
-          :style="{ background: background || '#333' }"
-          ref="nav"
-        >
+
+
+        <ul class="ul">
           <li>
             <input type="checkbox" class="dentro" name="list" id="nivel1-1" />
 
-            <label for="nivel1-1">Zonas</label>
+                <a for="nivel1-1" class="conte">
+                    <label class="linea" for="nivel1-1">Zonas</label>
+                </a>
 
             <ul class="interior">
-              <li v-for="(link, index) in hijo" :key="index">
-                <router-link
-                  :to="link.path"
-                  :style="{ color: linkColor || 'black' }"
-                  >{{ link.text }}
-                  </router-link>
-              </li>
-            </ul>
-          </li>
-
-           <li>
-            <input type="checkbox" class="dentro" name="list" id="nivel1-1" >
-
-            <label for="nivel1-1">llaves</label>
-
-            <ul class="interio">
               <li v-for="(link, index) in llaves" :key="index">
                 <router-link
                   :to="link.path"
-                  :style="{ color: linkColor || 'black' }"
+
                   >{{ link.text }}
                   </router-link>
+                  <hr>
               </li>
             </ul>
           </li>
-
-
-
-          <li>
-            <input type="checkbox" class="dentro" name="list" id="nivel1-1" >
-
-            <label for="nivel1-1">llaves</label>
-
-            <ul class="interio">
-              <li v-for="(link, index) in ambientes" :key="index">
-                <router-link
-                  :to="link.path"
-                  :style="{ color: linkColor || 'black' }"
-                  >{{ link.text }}
-                  </router-link>
-              </li>
-            </ul>
-          </li>
-
-
-
-
-
-
-
-
-          <!-- <li
-            v-for="(link, index) in verLinks"
-            :key="index"
-            @mouseenter="
-              $event.currentTarget.style.background = hoverBackground || '#999'
-            "
-            @mouseleave="
-              $event.currentTarget.style.background = background || '#333'
-            "
-          >
-            <router-link
-              :to="link.path"
-              :style="{ color: linkColor || 'black' }"
-            >
-              {{ link.text }}
-              <i :class="link.icon" />{{ link.icon }}
-            </router-link>
-          </li> -->
         </ul>
-      </aside>
-    </div>
+      <br/>
+    </nav>
     <!-- End vertical navbar -->
-  </div>
+ 
 </template>
 
 
@@ -107,34 +43,6 @@ export default {
 
   data() {
     return {
-      verLinks: [
-        {
-          text: "LLaves",
-          path: "/about",
-        },
-
-        {
-          text: "Asignar",
-          path: "/asignar",
-        },
-
-        {
-          text: "Salir",
-          path: "/blog",
-        },
-      ],
-
-      hijo: [
-        {
-          text: "Gestion de Zonas",
-          path: "/gestionar_zonas",
-        },
-        {
-          text: "Registrar Zonas",
-          path: "/Agregar_llave",
-        },
-      ],
-
       llaves:[
         {
           text:"  Gestion de LLaves",
@@ -145,67 +53,31 @@ export default {
           path:"/registrar_llaves"
         }
       ],
-      ambientes:[
-        {
-          text:"  Gestion de Ambientes",
-          path:"/gestionar_ambientes"
-        },
-        {
-          text:"  Resgistrar Ambiente",
-          path:"/registrar_ambientete "
-        }
-      ]
-
-      
     };
-  },
-
-  props: [
-    "VerticalLinks",
-    "background",
-    "linkColor",
-    "hoverBackground",
-    "imagePath",
-  ],
-
-  methods: {
-    toggleNav() {
-      const nav = this.$refs.nav.classList;
-      nav.contains("active") ? nav.remove("active") : nav.add("active");
-    },
   },
 };
 </script>
 
+
 <style scoped>
-ul {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
 
-.cabeza {
-  height: 10%;
-}
-
-.vertical-nav {
+.vertical {
+  background-color: white;
   min-width: 17rem;
-  width: 17rem;
+  width: 18rem;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   box-shadow: 2px 2px 2px #ccc;
 }
-
+.media{
+  margin: 0px 50px;
+}
 li {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
-  background-attachment: 2px 2px 5px #ccc;
+  width: 100%;
   list-style-type: none;
-  padding: 20px 20px;
+  padding: 10px 5px;
 }
 /*li :hover{
   border-radius:3px ;
@@ -217,86 +89,44 @@ ul {
   text-align: initial;
 }
 
-/* for toggle behavior */
+/* :hover{
 
-.dentro {
-  text-align: initial;
+  color: black !important;
+  border-left-color: orange !important;
+  
+} */
+.ul:hover{
+
+  background: orangered;
+  border: left color 2px; 
 }
 
-@media (max-width: 768px) {
-  #sidebar {
-    margin-left: -17rem;
-  }
-  #sidebar.active {
-    margin-left: 0;
-  }
-  #content {
-    width: 100%;
-    margin: 0;
-  }
-}
 
-* body {
-  background: #599fd9;
-  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
-  background: linear-gradient(to right, #599fd9, #c2e59c);
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-.separator {
-  margin: 3rem 0;
-  border-bottom: 1px dashed #fff;
-}
-
-.text-uppercase {
-  letter-spacing: 0.1em;
-}
-
-.text-gray {
-  color: #aaa;
-}
-.media-body {
-  padding: 0px 35px;
-}
-
-a {
+#vertical li a {
+  color: black;
   text-decoration: none;
 }
 
-#menu * {
-  list-style: none;
-}
-#menu li {
-  line-height: 180%;
-}
-#menu li a {
-  color: #222;
-  text-decoration: none;
-}
-#menu li a:before {
-  content: "\025b8";
-  color: #ddd;
-  margin-right: 4px;
-}
-#menu input[name="list"] {
+
+#vertical input[name="list"] {
   position: absolute;
-  left: -1000em;
+  left: -2000em;
 }
-#menu label:before {
-  content: "\025b8";
-  margin-right: 4px;
-}
-#menu input:checked ~ label:before {
+
+#vertical input:checked ~ label:before {
   content: "\025be";
 }
-#menu .interior {
+#vertical .interior {
   display: none;
 }
-.interior {
-  padding: 5px 30px;
-}
-#menu input:checked ~ ul {
+
+#vertical input:checked ~ ul {
   display: block;
 }
+
+
+
+
+
+
 </style>

@@ -7,7 +7,9 @@
         <div class="col-10">
           <div class="titulo">
             <span class="zona">Zonas</span>
+
           </div>
+          
           <hr />
           <article class="contenedor d-flex show ">
             <div
@@ -64,32 +66,60 @@ import axios from "axios";
 export default {
   name: "Gestionar_zonas",
 
-  data() {
-    return {
-      zones: [],
-      form: {},
-    };
+  data(){
+    return{
+      zones:[],
+    }
   },
 
-  mounted() {
-    this.getZonas();
+  mounted(){
+    this.MostrarZonas();
   },
 
-  methods: {
-    getZonas() {
-      axios
-        .get("http://127.0.0.1:8000/api/zonas")
-        .then((response) => {
-          console.log(response);
-          this.zones = response.data.zones;
-        })
-        .catch((e) => console.log(e));
-    },
+  methods:{
 
-    editar(nombre_zona) {
-      this.$router.push("/editar/" + nombre_zona);
-    },
-  },
+    MostrarZonas(){
+      axios.get("http://127.0.0.1:8000/api/zonas")
+      .then((lista)=>{
+        console.log(lista);
+        this.zones = lista.data.zones;
+      })
+      .catch((e) => console.log(e));
+    }
+  }
+
+
+
+
+
+
+
+  // data() {
+  //   return {
+  //     zones: [],
+  //     form: {},
+  //   };
+  // },
+
+  // mounted() {
+  //   this.getZonas();
+  // },
+
+  // methods: {
+  //   getZonas() {
+  //     axios
+  //       .get("http://127.0.0.1:8000/api/zonas")
+  //       .then((response) => {
+  //         console.log(response);
+  //         this.zones = response.data.zones;
+  //       })
+  //       .catch((e) => console.log(e));
+  //   },
+
+  //   editar(nombre_zona) {
+  //     this.$router.push("/editar/" + nombre_zona);
+  //   },
+  // },
 };
 </script>
 

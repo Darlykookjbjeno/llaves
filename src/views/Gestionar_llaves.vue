@@ -36,13 +36,6 @@
               </div>
             </div> -->
 
-
-
-
-
-
-
-
           <div class="card mb-3" style="max-width: 50rem;" v-for="llave in keys"
               :key="llave.url_codigo_qr">
             <div class="row g-0">

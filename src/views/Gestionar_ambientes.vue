@@ -27,12 +27,6 @@
             </div>
 
 
-  
-
-
-
-
-
 
           </article>
         </div>
@@ -45,6 +39,20 @@
 import axios from "axios";
 export default {
   name: "Gestionar_ambientes",
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
 
   data() {
     return {

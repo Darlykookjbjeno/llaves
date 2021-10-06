@@ -9,38 +9,64 @@ const routes = [{
         name: 'Home',
         component: Home
     },
+    //llllllllllllllllllllllllllllllllllllll---------------agregar----------------lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
     {
-        path: '/about',
-        name: 'about',
+        path: '/agregar_zona',
+        name: 'Agregar_zona',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => { return import ('../views/About.vue') }
+        component: () => { return import ('../views/Agregar_zonas.vue') }
     },
     {
-        path: '/contact',
-        name: 'Contact',
+        path: '/agregar_llave',
+        name: 'Agregar_llave',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: Home
+        component: () => { return import ('../views/Agregar_llaves.vue') }
     },
+
     {
-        path: '/blog',
-        name: 'blog',
+        path: '/agregar_ambiente',
+        name: 'Agregar_ambiente',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => { return import ('../views/About.vue') }
+        component: () => { return import ('../views/Agregar_ambientes.vue') }
     },
+    //ñlllllllllllllllllllllllllllllllllllll---------------editar----------------llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+
     {
-        path: '/asignar',
-        name: 'Asignar',
+        path: '/editar_zona',
+        name: 'Editar_zona',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => { return import ('../views/Asignar.vue') }
+        component: () => { return import ('../views/Editar_zona.vue') }
     },
+    {
+        path: '/editar_ambiente',
+        name: 'Editar_ambiente',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => { return import ('../views/Editar_ambiente.vue') }
+    },
+    {
+        path: '/editar_llave',
+        name: 'Editar_llave',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => { return import ('../views/Editar_llave.vue') }
+    },
+
+
+    //lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+
+
+
     {
         path: '/gestionar_zonas',
         name: 'Gestionar_zonas',
@@ -50,28 +76,20 @@ const routes = [{
         component: () => { return import ('../views/Gestionar_zonas.vue') }
     },
     {
-        path: '/editar/:id_zona',
-        name: 'Editar',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => { return import ('../views/Editar.vue') }
-    },
-    {
-        path: '/gestion_llaves',
-        name: 'Gestionar_llaves',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => { return import ('../views/Gestionar_llaves.vue') }
-    },
-    {
         path: '/gestionar_ambientes',
         name: 'Gestionar_ambientes',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () => { return import ('../views/Gestionar_ambientes.vue') }
+    },
+    {
+        path: '/gestionar_llaves',
+        name: 'Gestionar_llaves',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => { return import ('../views/Gestionar_llaves.vue') }
     },
 
 
